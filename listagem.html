@@ -1,93 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>forest flix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>App Filmes</title>
 </head>
+<style>
+    pre {
+
+        padding: 29px;
+        background: #ccc;
+        border-radius: 10px;
+        margin: 20px;
+ }
+
+</style>
+
 
 <body>
-    <div class="nome text-center">
-        <br><br>
-        <h1>FOREST FLIX</h1>
-        <br><br>
-    </div>
-    <div class="container bg-info">
-        <h3>Filmes Assistidos Por Você</h3>
-    </div>
-    <div class="container">
+    <div class="container"></div>
+    <pre id="debug"></pre>
+    <h1>Filmes</h1>
+    <form class="jumbotron">
         <div class="row">
-            <div class="col-md-3">
-                <img src="./assets/images/açao.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/Por-Lugares-Incríveis.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/comedia.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/rua_medo.jpg" width="90%" height="100%">
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container bg-info">
-        <h4>COMÉDIA</h4>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="./assets/images/cola-posterCOM.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/comedia3.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/comedia4.jpg" width="90%" height="100%">
-            </div>
-            <div class="col-md-3">
-                <img src="./assets/images/comedia5.jpg" width="90%" height="100%">
-            </div>
-
-            <div class="container bg-info">
+            <div class="col-4">
+                <label>Titulo</label>
+                <input onkeyup="atualizarDados()" type="text" class="form-control" placeholder="">
                 
-                <h4>ROMANCE</h4>
+
             </div>
-            
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <img src="./assets/css/images/como eu era antes de voce.jpg" width="90%" height="100%">
-                    </div>
-                    <div class="col-md-3">
-                        <img src="./assets/css/images/a ultima M.jpg" width="90%" height="100%">
-                    </div>
-                    <div class="col-md-3">
-                        <img src="./assets/css/images/o melhoR.jpg" width="90%" height="100%">
-                    </div>
-                    <div class="col-md-3">
-                        <img src="./assets/css/images/simplesmente acontece.jpg" width="90%" height="100%">
-                    </div>
-
-
-
-                    <style>
-                        body {
-                            background-color: black;
-                        }
-
-                        h1 {
-                            color: rgb(243, 13, 13);
-                        }
-                    </style>
-
+          
+            <div class="col-3">
+                    <label>codigo</label>
+                    <input onkeyup="atualizarDados()" type="text" class="form-control" placeholder="">
                 </div>
+            <div class="col-3">
+                <label>Destaque</label>
+                <select class="form-control">
+                    <option>SIM</option>
+                    <option>NÃO</option>
+                </select>
+            </div>
+            <tbody>
+                <tr>
+                    <th class="text-rigth">
+                        <button class="btn btn-info">Editar</button>
+                        <button class="btn btn-info">Excluir</button>
+                        <a href="javascript:void(0)" class="btn btn-lg btn-block btn-success">
+                            Cadastrar Filme
+                        </a>
+                    </th>
+                </tr>
+    </form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">titulo</th>
+                <th scope="col">codigo</th>
+                <th scope="col">destaque</th></select></div>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Culpa das estrelas</th>
+                <th>218926</th>
+                <th>sim</th>
+                <th class="text-right"><button class="btn btn-info">Acessar</button><button
+                        class="btn btn-danger">Excluir</button></th>
+            </tr>
+
+            <tr>
+                <th>Como eu era antes de você</th>
+                <th>3245667</th>
+                <th>sim</th>
+                <th class="text-right"><button class="btn btn-info">Acessar</button><button
+                        class="btn btn-danger">Excluir</button></th>
+            </tr>
+
+          
+        </tbody>
+    </table>
+    </div>
 </body>
+<script type="text/javascript">
+    let dados = {
+        titulo: '',
+        código: 0,
+        Destaque: '',
+        link: '',
+    };
+    const atualizarDados = () => {
+        dados = {
+            titulo: document.getElementById('titulo').Value,
+            código: document.getElementById('ano').value,
+            Destaque: document.getElementById('categoria').value,
+            link: document.getElementById('link').value,
+        };
+        document.getElementById('debug').innerHTML = JSON.stringify(dados);
+    };
+</script>
+
+
+</html>
+
+
+
+
+</tbody>
+</table>
+</div>
+
+</body>
+</body>
+
+<script type="text/javascript">
+
+
+
+    let dados = {
+
+        titulo: '',
+
+        código: 0,
+
+        Destaque: '',
+
+        link: '',
+
+    };
+
+
+
+    const atualizarDados = () => {
+
+        dados = {
+
+            titulo: document.getElementById('titulo').Value,
+
+            código: document.getElementById('ano').value,
+
+            Destaque: document.getElementById('categoria').value,
+
+            link: document.getElementById('link').value,
+
+        };
+
+      
+
+
+
+</script>
+
+
+
+</html>
 
 </html>
