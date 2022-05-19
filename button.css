@@ -1,20 +1,19 @@
 .button{
-    border-style:none ;
+    border-style: none;
     height: 40px;
     padding: 10px 12px;
     background-color: black;
     color: white;
-    cursor:auto;
     border-radius: 10px;
+    width: 80px;
 }
 
-
 button.dimgray{
-    background-color:dimgray;
+    background-color: dimgray;
+  
 }
 
 button.green{
-     background-color: green;
+    background-color: green;
+   
 }
-
-

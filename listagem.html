@@ -9,18 +9,24 @@
     <title>App Filmes</title>
 </head>
 <style>
-    pre {
-
-        padding: 29px;
-        background: #ccc;
+    .btn-tabela {
+        padding: 5px;
+        margin: 10px;
+        background-color: red;
+        color: #ffffff;
         border-radius: 10px;
-        margin: 20px;
- }
 
+    }
+
+    .btn-tabela:hover {
+        background: rgba(255, 0, 0, 0.5);
+    }
 </style>
 
-
 <body>
+    <div class="center">
+        <a class="btn-tabela" href="tabela.html">Incluir novos filmes</a>
+    </div>
     <div class="container"></div>
     <pre id="debug"></pre>
     <h1>Filmes</h1>
@@ -29,14 +35,14 @@
             <div class="col-4">
                 <label>Titulo</label>
                 <input onkeyup="atualizarDados()" type="text" class="form-control" placeholder="">
-                
+
 
             </div>
-          
+
             <div class="col-3">
-                    <label>codigo</label>
-                    <input onkeyup="atualizarDados()" type="text" class="form-control" placeholder="">
-                </div>
+                <label>codigo</label>
+                <input onkeyup="atualizarDados()" type="text" class="form-control" placeholder="">
+            </div>
             <div class="col-3">
                 <label>Destaque</label>
                 <select class="form-control">
@@ -47,7 +53,8 @@
             <tbody>
                 <tr>
                     <th class="text-rigth">
-                        <button class="btn btn-info">Editar</button>
+                        <button class="btn btn-info">Editar </button>
+
                         <button class="btn btn-info">Excluir</button>
                         <a href="javascript:void(0)" class="btn btn-lg btn-block btn-success">
                             Cadastrar Filme
@@ -80,28 +87,12 @@
                         class="btn btn-danger">Excluir</button></th>
             </tr>
 
-          
+
         </tbody>
     </table>
     </div>
 </body>
-<script type="text/javascript">
-    let dados = {
-        titulo: '',
-        código: 0,
-        Destaque: '',
-        link: '',
-    };
-    const atualizarDados = () => {
-        dados = {
-            titulo: document.getElementById('titulo').Value,
-            código: document.getElementById('ano').value,
-            Destaque: document.getElementById('categoria').value,
-            link: document.getElementById('link').value,
-        };
-        document.getElementById('debug').innerHTML = JSON.stringify(dados);
-    };
-</script>
+
 
 
 </html>
@@ -116,43 +107,6 @@
 </body>
 </body>
 
-<script type="text/javascript">
-
-
-
-    let dados = {
-
-        titulo: '',
-
-        código: 0,
-
-        Destaque: '',
-
-        link: '',
-
-    };
-
-
-
-    const atualizarDados = () => {
-
-        dados = {
-
-            titulo: document.getElementById('titulo').Value,
-
-            código: document.getElementById('ano').value,
-
-            Destaque: document.getElementById('categoria').value,
-
-            link: document.getElementById('link').value,
-
-        };
-
-      
-
-
-
-</script>
 
 
 
